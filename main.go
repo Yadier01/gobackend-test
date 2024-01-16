@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/gofiber/fiber"
 )
@@ -15,5 +16,5 @@ func main() {
 		c.SendString(msg)
 	})
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":" + os.Getenv("PORT")))
 }
